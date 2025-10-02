@@ -4,9 +4,11 @@
 
 **Project Name:** Seismic Lens  
 **Course:** Web Development - Project 2  
-**Timeline:** 1 Week (7 days)  
-**Estimated Hours:** 20-25 hours (3-4 hours/day)  
-**Deployment Target:** Public server (Render/Railway/Heroku)
+**Timeline:** 9 Working Days (Oct 2-13, No Sundays)  
+**Due Date:** Monday, October 13, 2025 at 1:00 PM  
+**Estimated Hours:** 20-25 hours (2-3 hours/day)  
+**Deployment Target:** Public server (Render/Railway/Heroku)  
+**Rest Days:** Sundays (Oct 5, Oct 12) - No work!
 
 ### What is Seismic Lens?
 
@@ -105,18 +107,17 @@ Seismic Lens is a full-stack geospatial web application that visualizes real-tim
 
 ---
 
-## Week Timeline
+## 9-Day Timeline (No Sundays!)
 
-### **Day 1-2: Setup & Backend (6-8 hours total)**
+### **Week 1: Backend & Setup**
 
-#### Day 1 (3-4 hours)
+#### **Day 1 - Wednesday, Oct 2** (2-3 hours)
 - [ ] Initialize project repository
 - [ ] Set up Node.js project (`npm init`)
 - [ ] Install dependencies (express, mongodb, dotenv, cors)
 - [ ] Create basic folder structure
 - [ ] Set up Express server with basic route
-- [ ] Connect to MongoDB (local or Atlas)
-- [ ] Test connection with simple console log
+- [ ] Test server runs successfully
 
 **Folder Structure:**
 ```
@@ -144,33 +145,55 @@ seismic-lens/
 └── LICENSE
 ```
 
-#### Day 2 (3-4 hours)
-- [ ] Create MongoDB collections schema (plan structure)
-- [ ] Implement CRUD routes for `saved_events`
-  - POST /api/events (create)
-  - GET /api/events (read all)
-  - PUT /api/events/:id (update)
-  - DELETE /api/events/:id (delete)
-- [ ] Implement CRUD routes for `annotations`
+---
+
+#### **Day 2 - Thursday, Oct 3** (2-3 hours)
+- [ ] Install/setup MongoDB (local or Atlas)
+- [ ] Create database connection file (`db.js`)
+- [ ] Connect to MongoDB
+- [ ] Test connection with console log
+- [ ] Create both collections with test data
+- [ ] Verify data in MongoDB
+
+---
+
+#### **Day 3 - Friday, Oct 4** (2-3 hours)
+- [ ] Create `routes/events.js`
+- [ ] Implement GET /api/events
+- [ ] Implement POST /api/events
+- [ ] Test with Thunder Client/Postman
+- [ ] Implement PUT /api/events/:id
+- [ ] Implement DELETE /api/events/:id
+
+---
+
+#### **Day 4 - Saturday, Oct 5** (3-4 hours - Weekend, extra time available)
+- [ ] Create `routes/annotations.js`
+- [ ] Implement all CRUD operations for annotations
   - POST /api/annotations (create)
   - GET /api/annotations (read all)
   - PUT /api/annotations/:id (update)
   - DELETE /api/annotations/:id (delete)
-- [ ] Test all routes with Thunder Client/Postman
+- [ ] Test all endpoints thoroughly
+- [ ] Add error handling to all routes
 - [ ] Set up ESLint and Prettier configs
 
-**Deliverable:** Working backend API that can create, read, update, and delete items in both collections
+**🎉 MILESTONE: Backend complete!**
 
 ---
 
-### **Day 3-5: Frontend Development (6-9 hours total)**
+#### **Day OFF - Sunday, Oct 6** ☀️
+**REST DAY - No coding!**
 
-#### Day 3 (2-3 hours)
+---
+
+### **Week 2: Frontend Development**
+
+#### **Day 5 - Monday, Oct 7** (2-3 hours)
 - [ ] Create basic HTML structure (index.html)
   - Header with title
   - Map container
   - Sidebar for saved events list
-  - Forms container
 - [ ] Add Leaflet.js via CDN
 - [ ] Initialize map centered on world view
 - [ ] Fetch earthquake data from USGS API
@@ -181,48 +204,55 @@ seismic-lens/
 https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 ```
 
-#### Day 4 (2-3 hours)
+---
+
+#### **Day 6 - Tuesday, Oct 8** (2-3 hours)
 - [ ] Create JavaScript modules structure
 - [ ] Implement `api.js` - functions to call backend API
 - [ ] Implement `ui.js` - functions to update DOM
 - [ ] Display saved events list (fetch from backend, render to sidebar)
-- [ ] Add "Save Event" form
-  - Form appears when clicking earthquake marker
-  - Submit saves to database via POST request
-  - List updates dynamically (client-side rendering)
-
-#### Day 5 (2-3 hours)
-- [ ] Implement "Create Annotation" form
-  - Click map → form appears with coordinates
-  - Add text note
-  - Submit saves to database
-- [ ] Display annotations on map as custom markers
-- [ ] Implement delete functionality (delete button for each saved item)
-- [ ] Add basic CSS styling
-  - Responsive layout
-  - Clean form styling
-  - Map sizing
-
-**Deliverable:** Working frontend that displays map, saves events, creates annotations, and updates dynamically
+- [ ] Add earthquake popup with details
 
 ---
 
-### **Day 6-7: Polish & Deploy (6-8 hours total)**
+#### **Day 7 - Wednesday, Oct 9** (2-3 hours)
+- [ ] Create "Save Event" form (modal)
+- [ ] Wire up form to POST endpoint
+- [ ] Save event when form submitted
+- [ ] Update sidebar dynamically (client-side rendering)
+- [ ] Add delete functionality for saved events
 
-#### Day 6 (3-4 hours)
+---
+
+#### **Day 8 - Thursday, Oct 10** (2-3 hours)
+- [ ] Create "Create Annotation" form
+- [ ] Click map → form appears with coordinates
+- [ ] Wire up to POST /api/annotations
+- [ ] Display annotations on map as custom markers
+- [ ] Add delete functionality for annotations
+- [ ] Add basic CSS styling
+
+**🎉 MILESTONE: All features working!**
+
+---
+
+#### **Day 9 - Friday, Oct 11** (3-4 hours)
 - [ ] Code cleanup
   - Remove console.logs
   - Remove unused code/comments
   - Run ESLint and fix all errors
   - Run Prettier on all files
 - [ ] Organize CSS into modules
-- [ ] Add update functionality (edit notes on saved events)
+- [ ] Make mobile responsive
+- [ ] Add update/edit functionality (optional if time)
 - [ ] Test all CRUD operations thoroughly
-- [ ] Add error handling (try/catch, user-friendly messages)
-- [ ] Create `.env.example` file (template without real credentials)
-- [ ] Update `.gitignore` to exclude `.env`
+- [ ] Add error handling
+- [ ] Create `.env.example` file
+- [ ] Update `.gitignore`
 
-#### Day 7 (3-4 hours)
+---
+
+#### **Day 10 - Saturday, Oct 12** (3-4 hours - Final push!)
 - [ ] Deploy to Render/Railway/Heroku
 - [ ] Configure environment variables on server
 - [ ] Test deployed app thoroughly
@@ -241,9 +271,19 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
   - Show CRUD operations
   - Explain technical implementation briefly
 - [ ] Submit Google Form with correct thumbnail/links
-- [ ] Final git commit and freeze code
+- [ ] Final git commit and **FREEZE CODE** (by midnight)
 
-**Deliverable:** Fully deployed, documented, and demonstrated application
+**🎉 PROJECT COMPLETE!**
+
+---
+
+#### **Day OFF - Sunday, Oct 13** ☀️
+**REST DAY - Project already submitted!**
+**Class at 1:00 PM - You're ready!**
+
+---
+
+**Deliverable:** Fully deployed, documented, and demonstrated application ready for Monday class
 
 ---
 
@@ -483,7 +523,7 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 
 ## Daily Progress Tracker
 
-### Day 1: ___/___/___ (Hours: ____)
+### Day 1 - Wednesday, Oct 2 (Hours: ____)
 **Completed:**
 - [ ] 
 - [ ] 
@@ -497,7 +537,7 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 
 ---
 
-### Day 2: ___/___/___ (Hours: ____)
+### Day 2 - Thursday, Oct 3 (Hours: ____)
 **Completed:**
 - [ ] 
 - [ ] 
@@ -511,7 +551,7 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 
 ---
 
-### Day 3: ___/___/___ (Hours: ____)
+### Day 3 - Friday, Oct 4 (Hours: ____)
 **Completed:**
 - [ ] 
 - [ ] 
@@ -525,7 +565,7 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 
 ---
 
-### Day 4: ___/___/___ (Hours: ____)
+### Day 4 - Saturday, Oct 5 (Hours: ____)
 **Completed:**
 - [ ] 
 - [ ] 
@@ -539,7 +579,12 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 
 ---
 
-### Day 5: ___/___/___ (Hours: ____)
+### Day OFF - Sunday, Oct 6 ☀️
+**REST DAY - Enjoy your day off!**
+
+---
+
+### Day 5 - Monday, Oct 7 (Hours: ____)
 **Completed:**
 - [ ] 
 - [ ] 
@@ -553,7 +598,7 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 
 ---
 
-### Day 6: ___/___/___ (Hours: ____)
+### Day 6 - Tuesday, Oct 8 (Hours: ____)
 **Completed:**
 - [ ] 
 - [ ] 
@@ -567,7 +612,49 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 
 ---
 
-### Day 7: ___/___/___ (Hours: ____)
+### Day 7 - Wednesday, Oct 9 (Hours: ____)
+**Completed:**
+- [ ] 
+- [ ] 
+- [ ] 
+
+**Issues/Notes:**
+- 
+
+**Tomorrow's Goal:**
+- 
+
+---
+
+### Day 8 - Thursday, Oct 10 (Hours: ____)
+**Completed:**
+- [ ] 
+- [ ] 
+- [ ] 
+
+**Issues/Notes:**
+- 
+
+**Tomorrow's Goal:**
+- 
+
+---
+
+### Day 9 - Friday, Oct 11 (Hours: ____)
+**Completed:**
+- [ ] 
+- [ ] 
+- [ ] 
+
+**Issues/Notes:**
+- 
+
+**Tomorrow's Goal:**
+- 
+
+---
+
+### Day 10 - Saturday, Oct 12 (Hours: ____)
 **Completed:**
 - [ ] 
 - [ ] 
@@ -581,6 +668,12 @@ https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson
 - [ ] Video uploaded
 - [ ] Deployed and tested
 - [ ] Google Form submitted
+- [ ] README complete with screenshot
+
+---
+
+### Day OFF - Sunday, Oct 13 ☀️
+**REST DAY - Project complete! Class at 1:00 PM**
 
 ---
 
